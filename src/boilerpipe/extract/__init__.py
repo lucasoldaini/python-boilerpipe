@@ -41,6 +41,8 @@ class Extractor(object):
             encoding    = connection.headers['content-type'].lower().split('charset=')[-1]
             if encoding.lower() == 'text/html':
                 encoding = charade.detect(self.data)['encoding']
+            if encoding is None:
+                encoding = 'utf-8'
             self.data = str(self.data, encoding)
         elif kwargs.get('html'):
             self.data = kwargs['html']
