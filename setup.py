@@ -8,6 +8,12 @@ try:
 except:
     from urllib.request import urlretrieve
 
+import sys
+if sys.version_info[0] < 3:
+    print("This module can only be used with Python 3.")
+    print("For a Python 2 version, see:\nhttps://github.com/misja/python-boilerpipe")
+    sys.exit(1)
+
 __version__ = '1.2.0.0'
 boilerpipe_version = '1.2.0'
 DATAPATH = join(abspath(dirname((__file__))), 'src/boilerpipe/data')
@@ -27,7 +33,7 @@ def download_jars(datapath, version=boilerpipe_version):
 download_jars(datapath=DATAPATH)
 
 setup(
-    name='boilerpipe',
+    name='boilerpipe-py3',
     version=__version__,
     packages=['boilerpipe', 'boilerpipe.extract'],
     package_dir={'': 'src'},
@@ -41,22 +47,22 @@ setup(
         'JPype1-py3',
         'charade',
     ],
-    author='Misja Hoebe',
-    author_email='misja.hoebe@gmail.com',
-    maintainer = 'Matthew Russell',
-    maintainer_email = 'ptwobrussell@gmail.com',
-    url = 'https://github.com/ptwobrussell/python-boilerpipe/',
+    author='sorpa\'as plat',
+    author_email='sorpaas@gmail.com',
+    maintainer = 'sorpa\'as plat',
+    maintainer_email = 'sorpaas@gmail.com',
+    url = 'https://github.com/sorpaas/python-boilerpipe/',
     classifiers=[
           'Development Status :: 5 - Production/Stable',
           'Environment :: Console',
           'Intended Audience :: Developers',
           'License :: OSI Approved :: Apache Software License',
           'Operating System :: OS Independent',
-          'Programming Language :: Python :: 2.7',
+          'Programming Language :: Python :: 3.4',
           'Natural Language :: English',
       ],
       keywords='boilerpipe',
       license='Apache 2.0',
 
-    description='Python interface to Boilerpipe, Boilerplate Removal and Fulltext Extraction from HTML pages'
+    description='Python interface to Boilerpipe, Boilerplate Removal and Fulltext Extraction from HTML pages with Python 3 support'
 )
