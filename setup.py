@@ -16,7 +16,7 @@ if sys.version_info[0] < 3:
 
 __version__ = '1.2.0.0'
 boilerpipe_version = '1.2.0'
-boulerpipe_url = (
+boilerpipe_url = (
     'https://storage.googleapis.com/google-code-archive-downloads/v2/'
     'code.google.com/boilerpipe/boilerpipe-{}-bin.tar.gz'
 )
